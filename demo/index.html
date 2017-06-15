@@ -1,92 +1,100 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="An alternative hover function for mobile devices">
 
-        <title>Hover on Touch</title>
-        <meta name="author" content="Vinzenz Aubry">
-        <meta name="publisher" content="Vinzenz Aubry">
-        <meta name="copyright" content="Vinzenz Aubry">
-        <meta http-equiv="content-language" content="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="An alternative hover function for mobile devices">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hover on Touch</title>
+    <meta name="author" content="Vinzenz Aubry">
+    <meta name="publisher" content="Vinzenz Aubry">
+    <meta name="copyright" content="Vinzenz Aubry">
+    <meta http-equiv="content-language" content="en">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="/static/css/normalize.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
+    <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
 
-        <h1>Hover on Touch</h1>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+</head>
 
-        <p class="description">Demo for <b><a href="https://github.com/vin-ni/hover-on-touch">hoverontouch.js</a></b>, an alternative hover plugin for touch devices. It triggers a hover on Taphold &amp; goes to a possible link on Tap. It works with all html elements.</p>
-        
+<body>
 
-        <div class="wrapper">
+    <h1>Hover on Touch</h1>
 
-            <a href="https://www.google.com" class="hoverontouch marginBottom20">
-                <div class="testObject">
-                    <div class="info pink"><img src="img/01Info.png"></div>
-                    <div class="cover pink "><img src="img/01Cover.png"></div>
-                </div>
-            </a>
+    <p class="description">Demo for <b><a href="https://github.com/vin-ni/hover-on-touch">hoverontouch.js</a></b>, an alternative hover plugin for
+        touch devices. It triggers a hover on Taphold &amp; goes to a possible link on Tap. It works with all html elements.</p>
 
-            <a href="https://www.example.com" class="hoverontouch marginBottom20"><p class="link">Scroll over this link</p></a>
 
-            <a href="https://www.example.com" class="hoverontouch marginBottom20">
-                <div class="testObject">
-                    <div class="info blue"><img src="img/02Info.gif"></div>
-                    <div class="cover blue "><img src="img/02Cover.png"></div>
-                </div>
-            </a>
+    <div class="wrapper">
 
-            <div class="links">
-                <a href="https://www.example.com" class="hoverontouch"><p class="link2">Or this link</p></a>
-                <a href="https://www.example.com" class="hoverontouch"><p class="link3">Or this link</p></a>
+        <a href="https://www.google.com" class="hoverontouch marginBottom20">
+            <div class="testObject">
+                <div class="info pink"><img src="/static/img/01Info.png"></div>
+                <div class="cover pink "><img src="/static/img/01Cover.png"></div>
             </div>
+        </a>
 
-            <a href="https://www.example.com" class="hoverontouch marginBottom20">
-                <div class="testObject">
-                    <div class="info lightBlue"><img src="img/03Info.png"></div>
-                    <div class="cover lightBlue"><img src="img/03Cover.png"></div>
-                </div>
+        <a href="https://www.example.com" class="hoverontouch marginBottom20">
+            <p class="link">Scroll over this link</p>
+        </a>
+
+        <a href="https://www.example.com" class="hoverontouch marginBottom20">
+            <div class="testObject">
+                <div class="info blue"><img src="/static/img/02Info.gif"></div>
+                <div class="cover blue "><img src="/static/img/02Cover.png"></div>
+            </div>
+        </a>
+
+        <div class="links marginBottom20">
+            <a href="https://www.example.com" class="hoverontouch">
+                <p class="link2">Or this link</p>
             </a>
-
-            <a href="https://www.example.com" class="hoverontouch marginBottom20">
-                <div class="testObject">
-                    <div class="info yellow"><img src="img/04Info.gif"></div>
-                    <div class="cover yellow"><img src="img/04Cover.png"></div>
-                </div>
+            <a href="https://www.example.com" class="hoverontouch">
+                <p class="link3">Or this link</p>
             </a>
-
-            <a href="https://www.example.com" class="hoverontouch marginBottom20">
-                <div class="testObject">
-                    <div class="info grey"><img src="img/05Info.png"></div>
-                    <div class="cover grey"><img src="img/05Cover.png"></div>
-                </div>
-            </a>
-
-<!--             <a href="https://www.example.com" class="hoverontouch marginBottom20"><div class="testObject emptyDiv"></div></a> -->
-
         </div>
-    
 
-        <p>Read the <a href="http://vinzenzaubry.com/journal/hover-on-touch/">article</a> by <a href="http://vinzenzaubry.com/">Vinzenz Aubry</a></p>
-        
+        <a href="https://www.example.com" class="hoverontouch marginBottom20">
+            <div class="testObject">
+                <div class="info lightBlue"><img src="/static/img/03Info.png"></div>
+                <div class="cover lightBlue"><img src="/static/img/03Cover.png"></div>
+            </div>
+        </a>
 
-    
-        <script src="js/hoverontouch.js"></script>
+        <a href="https://www.example.com" class="hoverontouch marginBottom20">
+            <div class="testObject">
+                <div class="info yellow"><img src="/static/img/04Info.gif"></div>
+                <div class="cover yellow"><img src="/static/img/04Cover.png"></div>
+            </div>
+        </a>
 
-        <script type="text/javascript">
-            var HoverOnTouch = new HoverOnTouch();
-        </script>
+        <a href="https://www.example.com" class="hoverontouch marginBottom20">
+            <div class="testObject">
+                <div class="info grey"><img src="/static/img/05Info.png"></div>
+                <div class="cover grey"><img src="/static/img/05Cover.png"></div>
+            </div>
+        </a>
 
-  
-    </body>
+    </div>
+
+
+    <p>Read the <a href="http://vinzenzaubry.com/journal/hover-on-touch/">article</a> by <a href="http://vinzenzaubry.com/">Vinzenz Aubry</a></p>
+
+
+
+    <script src="/lib/HoverOnTouch.min.js"></script>
+
+    <script type="text/javascript">
+        var HoverOnTouch = new HoverOnTouch();
+    </script>
+
+
+</body>
+
 </html>
