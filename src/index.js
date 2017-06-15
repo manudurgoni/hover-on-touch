@@ -14,7 +14,8 @@ export default class HoverOnTouch {
     this.opts = {
       activeClass: `${this.name}--aktiv`,
       global: false,
-      disableClass: `${this.name}--disable`
+      disableClass: `${this.name}--disable`,
+      disableGifRestart: false
     };
     Object.assign(this.opts, opts);
 
@@ -115,7 +116,7 @@ export default class HoverOnTouch {
 
     this.currentHoveredElement = Utils.getClosest(e.target, this.className);
 
-    this.currentHoveredElement.gifs && Utils.restartGifs(this.currentHoveredElement.gifs);
+    this.currentHoveredElement.gifs && !this.opts.disableGifRestart && Utils.restartGifs(this.currentHoveredElement.gifs);
 
     this.currentHoveredElement.classList.add(this.opts.activeClass);
   }
@@ -137,7 +138,7 @@ export default class HoverOnTouch {
       this.vars.multiTouchGesture = true;
     }
 
-    this.currentHoveredElement.gifs && Utils.restartGifs(this.currentHoveredElement.gifs);
+    this.currentHoveredElement.gifs && !this.opts.disableGifRestart && Utils.restartGifs(this.currentHoveredElement.gifs);
 
     this.currentHoveredElement.classList.add(this.opts.activeClass);
 
