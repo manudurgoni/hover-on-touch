@@ -246,7 +246,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    max-width: 375px;
+    max-width: 495px;
 }
 
 .link2, .link3 {
@@ -313,13 +313,16 @@ img {
 /*==========  Mobile First Method  ==========*/
 
 /* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
+@media only screen and (max-width : 320px) {
 
 }
 
 /* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-
+@media only screen and (max-width : 480px) {
+    .link2,
+    .link3 {
+        font-size: 1rem;
+    }
 }
 
 
@@ -336,7 +339,7 @@ img {
     .description{
       font-size: 1.2rem;
       margin: 0 auto;
-      max-width: 70vw;
+      max-width: 900px;
       margin-bottom: 20px;
     }
 }

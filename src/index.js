@@ -3,21 +3,24 @@ import Utils from 'utils';
 export default class HoverOnTouch {
   constructor(opts = {}) {
     this.name = 'hoverontouch';
-
+    this.className = `.${this.name}`;
     /**
+     * Default values
      * Options available :
-     * - activeClass: 'hoverontouch--aktiv' is default
+     * - activeClass: class added on hover/touch
+     * - global: if true, we apply the hoverontouch on every links
+     * - disableClass: if global option is true, we don't apply hoverontouch on element with the disableClass
      */
     this.opts = {
-      activeClass: `${this.name}--aktiv`
+      activeClass: `${this.name}--aktiv`,
+      global: false,
+      disableClass: `${this.name}--disable`
     };
     Object.assign(this.opts, opts);
 
     this.device = {
       isTouch: 'ontouchstart' in window || navigator.maxTouchPoints
     };
-
-    console.log(this.device);
 
     // set variables
     this.vars = {
@@ -31,7 +34,7 @@ export default class HoverOnTouch {
     };
 
     // gather all elements
-    this.domElements = document.querySelectorAll('.hoverontouch');
+    this.domElements = (this.opts.global) ? document.querySelectorAll(`a:not(.${this.opts.disableClass})`) : document.querySelectorAll(this.className);
 
     this.init();
   }
@@ -54,6 +57,7 @@ export default class HoverOnTouch {
   parseElements() {
 
     for (let el of this.domElements) {
+      el.classList.add(this.name);
 
       el.imgs = el.querySelectorAll('img');
       el.gifs = Utils.getGifs(el.imgs);
@@ -79,22 +83,6 @@ export default class HoverOnTouch {
 
       this.addElementListeners(el);
     }
-
-    // for (var i = 0; i < this.all_objects.length; i++) {
-    //   var object = this.all_objects[i];
-
-    //   // loop through elements and look for gifs
-    //   object.allImages = object.getElementsByTagName('img');
-    //   object.gifs = this.filterGifs(object.allImages);
-
-    //   // add event listeners
-    //   object.addEventListener('mouseenter', this.handlerMouseenterHoverontouch);
-    //   object.addEventListener('mouseout', this.handlerMouseeoutHoverontouch);
-    //   object.addEventListener('mouseup', this.handlerMouseupHoverontouch);
-    //   object.addEventListener('touchstart', this.handlerTouchstartHoverontouch);
-    //   object.addEventListener('touchend', this.handlerTouchendHoverontouch);
-
-    // }
   }
 
   addElementListeners(el) {
@@ -125,7 +113,7 @@ export default class HoverOnTouch {
   mouseenterHoverontouch(e) {
     if (this.currentHoveredElement) return;
 
-    this.currentHoveredElement = Utils.getClosest(e.target, '.hoverontouch');
+    this.currentHoveredElement = Utils.getClosest(e.target, this.className);
 
     this.currentHoveredElement.gifs && Utils.restartGifs(this.currentHoveredElement.gifs);
 
@@ -142,7 +130,7 @@ export default class HoverOnTouch {
   touchstartHoverontouch(e) {
     if (this.currentHoveredElement) return;
     console.log('what', this.currentHoveredElement);
-    this.currentHoveredElement = Utils.getClosest(e.target, '.hoverontouch');
+    this.currentHoveredElement = Utils.getClosest(e.target, this.className);
 
     this.vars.multipleTouchAmount = this.vars.multipleTouchAmount + 1;
     if (this.vars.multipleTouchAmount > 1) {
